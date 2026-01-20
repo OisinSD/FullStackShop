@@ -62,7 +62,7 @@ func main() {
 func (cfg *apiConfig) handlerSecondPage(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "text/html")
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(fmt.Sprintf(`
+	_, err := w.Write([]byte(fmt.Sprintf(`
 	<html>
 	<head>
 		<meta charset="UTF-8">
@@ -76,4 +76,7 @@ func (cfg *apiConfig) handlerSecondPage(w http.ResponseWriter, r *http.Request) 
 
 	</html>
 		`, "Lol")))
+	if err != nil {
+		log.Fatalf("error writing secondary page to http address: %v", err)
+	}
 }
