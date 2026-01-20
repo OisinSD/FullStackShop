@@ -3,13 +3,15 @@ A full stack webapp using JS, HTML &amp; CSS with node.js and SQLite for the bac
 
 ## Installation
 
-Make sure you have the latest [Go toolchain](https://golang.org/dl/) installed. You can then install `FullStackShop` with:
+Make sure you have the latest [Go toolchain](https://golang.org/dl/) installed. You can then pull the `FullStackShop` repo with:
 
 ```bash
-go install "github.com/OisinSD/FullStackShop@latest"
+git clone "github.com/OisinSD/FullStackShop"
 ```
 
 ## Config
+
+Before running the server, some light configuration is required.
 
 Create a `.env` file in your project directory with the following structure:
 
