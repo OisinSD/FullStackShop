@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"sync/atomic"
+	"time"
 
 	_ "github.com/lib/pq"
 
@@ -51,8 +52,9 @@ func main() {
 	mux.HandleFunc("GET /api/user", apiCfg.handlerCreateUser)
 
 	srv := &http.Server{
-		Addr:    ":" + port,
-		Handler: mux,
+		Addr:              ":" + port,
+		ReadHeaderTimeout: time.Second * 10,
+		Handler:           mux,
 	}
 
 	log.Printf("Serving files from %s on port: %s\n", filepathRoot, port)
