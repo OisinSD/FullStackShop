@@ -1,3 +1,5 @@
+![Dynamically generated badge showing current status of all tests performed in CI](https://github.com/SeanCrowe1/learn-cicd-starter/actions/workflows/ci.yml/badge.svg)
+
 # FullStackShop
 A full stack webapp using JS, HTML &amp; CSS with node.js and SQLite for the backend.
 
