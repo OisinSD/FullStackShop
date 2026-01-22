@@ -7,13 +7,12 @@ import (
 	"net/http"
 
 	"FullStackShopProj/internal/database"
-
-	"github.com/google/uuid"
 )
+
+// Example values, final function will need to use customer inputs from website
 
 func (cfg *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Request) {
 	_, err := cfg.db.CreateCustomer(context.Background(), database.CreateCustomerParams{
-		ID:        uuid.New(),
 		FirstName: "James",
 		LastName:  "Smith",
 		Email:     "james.smith@email.com",
